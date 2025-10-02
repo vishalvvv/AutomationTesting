@@ -1,0 +1,9 @@
+Feature: Adding vehicle information
+
+Scenario: Validating vehicle information
+
+Given User gives application URL
+Then check whether user logged into home page
+Then Enter vehicle details
+Then Click on next button
+ 

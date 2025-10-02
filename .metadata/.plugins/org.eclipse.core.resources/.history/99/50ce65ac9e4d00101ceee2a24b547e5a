@@ -1,0 +1,20 @@
+package miyapur;
+
+public class HEC2ndYear {
+	
+void raghu() {
+	System.out.println("hi all iam raghu method");
+}
+
+void  praveen() {
+	System.out.println("hello all im praveen method");
+}
+
+public static void main(String[] args) {
+	System.out.println("im in main method");
+	HEC2ndYear hec = new HEC2ndYear();
+	hec.raghu();
+	HEC2ndYear he = new HEC2ndYear();
+	he.praveen();
+}
+}

@@ -1,0 +1,94 @@
+package POMTestCases;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class ScriptPOM extends POMTesting {
+
+	 
+	public void login() {
+		driver.get("https://sampleapp.tricentis.com/101/app.php");
+	}
+	
+	@FindBy (xpath="//input[@id='cylindercapacity']") WebElement CC;
+	@FindBy (xpath="//input[@id='engineperformance']") WebElement EP;
+	@FindBy (xpath="//input[@id='dateofmanufacture']") WebElement DOM;
+	@FindBy (xpath="//select[@id='numberofseats']") WebElement NOS;
+	@FindBy (xpath="//select[@id='fuel']") WebElement FUEL;
+	@FindBy(id = "righthanddriveyes") WebElement RHDYes;
+    @FindBy(xpath="//input[@id='payload']") WebElement PL;
+	@FindBy (xpath="//input[@id='totalweight']") WebElement TW;
+	@FindBy (xpath="//input[@id='listprice']") WebElement LP;
+	@FindBy (xpath="//input[@id='licenseplatenumber']") WebElement LPN;
+	@FindBy (xpath="//input[@id='annualmileage']") WebElement AM;
+	@FindBy  (xpath="//button[@id='nextenterinsurantdata']") WebElement NID;
+	public void vehicleData(String c,String e,String dom,String nos,String fuel,String pl,String tw,String lp,String lpn,String am) {
+	CC.sendKeys(c);
+	EP.sendKeys(e);
+	DOM.sendKeys(dom);
+	NOS.sendKeys(nos);
+	 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", RHDYes);
+	 FUEL.sendKeys(fuel);
+	PL.sendKeys(pl);
+	TW.sendKeys(tw);
+	LP.sendKeys(lp);
+	LPN.sendKeys(lpn);
+	AM.sendKeys(am);
+	NID.click();
+	}
+	
+	@FindBy (xpath="//input[@id='firstname']") WebElement FN;
+	@FindBy (xpath="//input[@id='lastname']") WebElement LN;
+	@FindBy (xpath="//input[@id='birthdate']") WebElement DOB;
+	@FindBy (xpath="//label[input[@id='gendermale']]/span") WebElement Gender;
+	@FindBy (xpath="//input[@id='streetaddress']") WebElement SA;
+	@FindBy (xpath="//select[@id='country']") WebElement Country;
+	@FindBy (xpath="//input[@id='zipcode']") WebElement Zipcode;
+	@FindBy (xpath="//input[@id='city']") WebElement City;
+	@FindBy (xpath="//select[@id='occupation']") WebElement Occupation;
+	@FindBy (xpath="//label[input[@id='speeding']]") WebElement Speeding;
+	@FindBy (xpath="//button[@id='nextenterproductdata']") WebElement NEPD;
+	public void insurantData(String fname,String lname,String dob,String sa,String country,String zipcode,String city,String occupation) {
+		FN.sendKeys(fname);
+		LN.sendKeys(lname);
+		DOB.sendKeys(dob);
+		SA.sendKeys(sa);
+		Gender.click();
+		Country.sendKeys(country);
+		Zipcode.sendKeys(zipcode);
+		City.sendKeys(city);
+		Occupation.sendKeys(occupation);
+		Speeding.click();
+		NEPD.click();
+		}
+	
+//	@FindBy (xpath="//select[@id='insurancesum']") WebElement IS;
+//	@FindBy (xpath="//select[@id='damageinsurance']") WebElement DI;
+//	public void productData(String insuranceValue,String damageValue) {
+//		List<WebElement> insurances = driver.findElements(By.tagName("option"));
+	//	Select insurancesum = new Select(IS);
+	//	insurancesum.selectByValue(insuranceValue);
+	//	List<WebElement> damage = driver.findElements(By.tagName("option"));
+	//	Select damageinsurance = new Select(DI);
+	//	damageinsurance.selectByVisibleText(damageValue);
+	// }
+	
+	
+	@FindBy (xpath="//input[@id='email']") WebElement EML;
+	@FindBy (xpath="//input[@id='password']") WebElement PWD;
+	public void sendQuote(String eml,String pwd) {
+	
+		EML.sendKeys(eml);
+		PWD.sendKeys(pwd);
+	}
+	
+	
+}

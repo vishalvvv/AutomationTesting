@@ -1,0 +1,72 @@
+package SelectPriceDataRunSteps;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+
+public class Runstepbystep {
+
+	public static WebDriver driver;
+	
+	@Given("User gives application URL")
+	public void usergivesapplicationurl() {
+		System.setProperty("webdriver.edge.driver", "C:\\Users\\Vishal\\Automation Testing\\VehicleInsuranceProject\\MyBro\\msedgedriver.exe");
+		 driver = new EdgeDriver();
+		 driver.manage().window().maximize();
+		 driver.get("https://sampleapp.tricentis.com/101/app.php");
+	}
+	@Then("check whether user logged into home page")
+	public void checkwhetheruserloggedintohomepage() {
+		System.out.println("The Home page title is: " +driver.getTitle());
+	}
+	@Then("check whether user logged into vehicle insurant page")
+	public void checkwhetheruserloggedintovehicleinsurantpage() {
+		WebElement idclick = new WebDriverWait(driver, Duration.ofSeconds(10))
+	 	        .until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='nextenterinsurantdata']")));
+    	idclick.click();
+    	
+    	System.out.println("The  page title is: " +driver.getTitle());
+	}
+	@Then("check whether user logged into product data page")
+	public void checkwhetheruserloggedintoproductdatapage() {
+		 driver.findElement(By.xpath("//button[@id='nextenterproductdata']")).click();
+			System.out.println("The  page title is: " +driver.getTitle());
+		 }
+	@Then("check whether price is correct")
+	public void checkwhetherpriceiscorrect() {
+		System.out.println("The  page title is: " +driver.getTitle());
+	//	 driver.findElement(By.xpath("//label[.//input[@id='selectgold']]")).click();
+		WebElement goldOption = driver.findElement(By.id("selectgold"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", goldOption);
+				// driver.findElement(By.xpath("//button[@id='nextsendquote']")).click();
+		WebElement sendQuoteBtn = driver.findElement(By.id("nextsendquote"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", sendQuoteBtn);
+
+
+
+		
+				
+	}
+	@Then("click on next button")
+	public void clickonnextbutton() {
+	//	WebElement nextprodclick = new WebDriverWait(driver, Duration.ofSeconds(10))
+		//	    .until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='nextselectpriceoption']")));
+	//		nextprodclick.click();
+		
+		WebElement nextprodclick = new WebDriverWait(driver, Duration.ofSeconds(20))
+			    .until(ExpectedConditions.presenceOfElementLocated(By.id("nextselectpriceoption")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", nextprodclick);
+			System.out.println("The  page title is: " +driver.getTitle());
+
+	}
+
+}

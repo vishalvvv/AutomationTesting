@@ -1,0 +1,21 @@
+package DataTypes;
+
+public class FloatClass1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		// float p = 1.4; // error Type mismatch: cannot convert from double to float
+		
+		float p = 1.4f;
+		System.out.println(p);
+		float u = 78;
+		System.out.println(u);
+		float e = 67L;
+		System.out.println(e);
+		
+	//	long a = 45f;  // error Type mismatch: cannot convert from float to long
+		
+	}
+
+}

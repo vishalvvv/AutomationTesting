@@ -1,0 +1,8 @@
+URL=https://sampleapp.tricentis.com/101/app.php
+XMAKE=//select[@id='make']
+XMODEL=//select[@id='model']
+XCYLINDERCAPACITY=//input[@id='cylindercapacity']
+XENGINEPERFORMANCE=//input[@id='engineperformance']
+XDATEOFMANUFACTURE=//input[@id='dateofmanufacture']
+XNOOFSEATS=//select[@id='numberofseats']
+XFUEL=//select[@id='fuel']

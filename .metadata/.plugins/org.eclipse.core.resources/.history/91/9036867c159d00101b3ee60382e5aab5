@@ -1,0 +1,2 @@
+URL=https://sampleapp.tricentis.com/101/app.php
+XMAKE=//select[@id='make']

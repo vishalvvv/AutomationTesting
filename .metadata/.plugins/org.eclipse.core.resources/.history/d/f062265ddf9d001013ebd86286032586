@@ -1,0 +1,9 @@
+package POMTestCases;
+
+import org.testng.annotations.Test;
+
+public class POMTesting {
+  @Test
+  public void f() {
+  }
+}

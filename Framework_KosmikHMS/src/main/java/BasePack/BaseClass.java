@@ -1,0 +1,41 @@
+
+package BasePack;
+
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+
+public class BaseClass {
+  
+   public static WebDriver driver;
+         public static Properties obj;
+         
+  @BeforeClass
+  public void openingmybrowser() throws IOException {
+	 
+	  System.setProperty("webdriver.edge.driver","C:\\Users\\Vishal\\Downloads\\edgedriver_win64\\msedgedriver.exe");
+	  driver = new EdgeDriver();
+	  driver.manage().window().maximize();
+	  FileInputStream f = new FileInputStream("C:\\Users\\Vishal\\Automation Testing\\Framework_KosmikHMS\\src\\data\\java\\MyDataPack\\DataFile");
+	  obj = new Properties();
+	  obj.load(f);
+  }
+
+  
+  
+  @AfterMethod
+  public void closingmybrowser() {
+	  
+	 driver.quit();
+  }
+
+
+}

@@ -1,0 +1,14 @@
+package RunningVehicleInsurance;
+
+import org.testng.annotations.Test;
+
+import BasePack.BaseClass;
+
+public class ExecuteTestCases extends BaseClass {
+	
+
+	  @Test
+	  public void login() {
+		  driver.get("https://sampleapp.tricentis.com/101/app.php");
+	  }
+}

@@ -1,0 +1,23 @@
+package POMTestCases;
+
+import java.io.IOException;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import BasePack.BaseClass;
+
+public class POMTesting extends BaseClass {
+  @Test
+  public void Testing() throws IOException {
+	  ScriptPOM S = PageFactory.initElements(driver, ScriptPOM.class);
+
+	  S.login();
+	  S.vehicleData("100","650","01/01/2020","5","4564","Petrol","1000","456354","ts12fs4530","12");
+	  S.insurantData("Liam","Payne","01/01/1990","kphb","India","500072","Hyderabad","Employee");
+	  S.productData("11/06/2025","3000000");
+	// S.sendQuote("jdds@gmail.com","htt75");
+	
+	  
+  }
+}

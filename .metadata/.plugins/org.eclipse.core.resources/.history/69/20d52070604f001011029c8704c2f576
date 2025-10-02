@@ -1,0 +1,13 @@
+package DataTypes;
+
+public class CharClass1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		char d = '%';
+		char u = 'T';
+		char j = '9';
+	}
+
+}

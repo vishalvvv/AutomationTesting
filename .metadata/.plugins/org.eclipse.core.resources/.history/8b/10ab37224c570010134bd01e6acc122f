@@ -1,0 +1,21 @@
+package assignmentprograms;
+
+public class Eligiblecreditcard {
+
+	public static void main(String[] args) {
+		
+		int age = 25, income = 25000;
+		
+		if(age<21) {
+			System.out.println("you are underage");
+		}
+		else if(income< 40000) {
+			System.out.println("\"Your income is too low for a credit card.");
+		}
+		else if(age>21 && income>4000) {
+			System.out.println("\"You are eligible for a credit card.");
+		}
+		
+	}
+
+}

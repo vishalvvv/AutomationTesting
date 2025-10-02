@@ -1,0 +1,26 @@
+package thiscases;
+
+public class States {
+	
+	States(String k){
+		this();
+		System.out.println("Hai Iam One Sting parameterised Constructor");
+		this.telangana();
+		System.out.println("The one of the state in India is: " +this.B);	
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+    new States("Good");
+	}
+	
+	States(){
+		System.out.println("Hai Iam Default Constructor");
+	}
+	
+	void telangana() {
+		System.out.println("Hai Iam 28th State in India");
+	}
+
+	String B = "kerala";
+}

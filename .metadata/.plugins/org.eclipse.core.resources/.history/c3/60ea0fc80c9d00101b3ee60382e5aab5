@@ -1,0 +1,21 @@
+package BasePack;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+
+public class BaseClass {
+	
+
+ @BeforeClass
+ public void beforeClass() {
+	  }
+
+  @Test
+  public void f() {
+  }
+  @AfterMethod
+  public void afterMethod() {
+  }
+
+}

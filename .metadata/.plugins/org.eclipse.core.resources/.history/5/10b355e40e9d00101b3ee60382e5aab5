@@ -1,0 +1,9 @@
+package RunningVehicleInsurance;
+
+import org.testng.annotations.Test;
+
+public class ExecuteTestCases {
+  @Test
+  public void f() {
+  }
+}

@@ -1,0 +1,3 @@
+Feature:Validating price
+Scenario: check the price
+Given 

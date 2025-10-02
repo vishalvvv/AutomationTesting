@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;airport.terminal.java&apos; to &apos;arrivals.java&apos;&#x0D;&#x0A;- Original project: &apos;Batch9AM_Basic Java&apos;&#x0D;&#x0A;- Original element: &apos;airport.terminal.java&apos;&#x0D;&#x0A;- Renamed element: &apos;airport.arrivals.java&apos;" description="Rename compilation unit &apos;terminal.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;airport{terminal.java" name="arrivals.java" references="false" stamp="1750223808591" version="1.0"/>
+</session>

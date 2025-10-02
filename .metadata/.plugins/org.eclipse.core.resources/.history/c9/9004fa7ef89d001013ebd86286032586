@@ -1,0 +1,48 @@
+package POMTestCases;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
+
+public class ScriptPOM extends POMTesting {
+
+	public void login() {
+		driver.get("https://sampleapp.tricentis.com/101/app.php");
+	}
+	
+	@FindBy (xpath="//input[@id='cylindercapacity']") WebElement CC;
+	@FindBy (xpath="//input[@id='engineperformance']") WebElement EP;
+	@FindBy  (xpath="//button[@id='nextenterinsurantdata']") WebElement NID;
+	public void vehicleData(String c,String e) {
+	CC.sendKeys(c);
+	EP.sendKeys(e);
+	NID.click();
+	}
+	
+	@FindBy (xpath="//input[@id='firstname']") WebElement FN;
+	@FindBy (xpath="//input[@id='lastname']") WebElement LN;
+	public void insurantData(String fname,String lname) {
+		FN.sendKeys(fname,lname);
+		}
+	
+//	@FindBy (xpath="//select[@id='insurancesum']") WebElement IS;
+//	@FindBy (xpath="//select[@id='damageinsurance']") WebElement DI;
+//	public void productData(String insuranceValue,String damageValue) {
+//		List<WebElement> insurances = driver.findElements(By.tagName("option"));
+	//	Select insurancesum = new Select(IS);
+	//	insurancesum.selectByValue(insuranceValue);
+	//	List<WebElement> damage = driver.findElements(By.tagName("option"));
+	//	Select damageinsurance = new Select(DI);
+	//	damageinsurance.selectByVisibleText(damageValue);
+	// }
+	
+	@FindBy (xpath="//input[@id='username']") WebElement UN;
+	public void sendQuote(String username) {
+		UN.sendKeys(username);
+	}
+	
+	
+}

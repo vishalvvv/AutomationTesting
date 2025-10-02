@@ -1,0 +1,27 @@
+package BasePack;
+
+import org.testng.annotations.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+
+public class BaseClass {
+	
+public static WebDriver driver;
+
+ @BeforeClass
+ public void openingmybrowser() {
+	 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Vishal\\Downloads\\edgedriver_win64\\msedgedriver.exe");
+	 driver = new EdgeDriver();
+	 driver.manage().window().maximize();
+	 }
+
+  @Test
+  public void f() {
+  }
+  @AfterMethod
+  public void afterMethod() {
+  }
+
+}

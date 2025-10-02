@@ -1,0 +1,23 @@
+package DataTypes;
+
+public class LongClass1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+   // long range is -9223372036854775808 to 9223372036854775807
+		long l = 125479; // long can fit in below ranges
+		System.out.println(l);
+		long m = -922337203685477508L;
+		System.out.println(m);
+		long n = 9223372036854775807L;
+		System.out.println(n);
+		
+	//	long t = 3001020900999; // the literal of type int is out of range
+		
+	//	long u = 88844555394859223444L; // out of range
+		// System.out.println(u);
+		
+		
+	}
+
+}

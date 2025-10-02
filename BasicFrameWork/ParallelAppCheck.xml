@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite thread-count="2" parallel="methods" name="Suite">
+  <test thread-count="2" parallel="methods" name="Test">
+    <classes>
+      <class name="ParallelPack.ParallelApp"/>
+      <class name="ParallelPack.Calculating"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

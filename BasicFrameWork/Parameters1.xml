@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+	  <parameter name="mybro" value="Ee"></parameter>
+	  <parameter name="UN" value="selenium"></parameter>
+	  <parameter name="PWD" value="cypress"></parameter>
+	 <parameter name="XSUB" value="//input[@value = 'Login']"></parameter>
+    <classes>
+      <class name="ParameterPack.BrowserCheck"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

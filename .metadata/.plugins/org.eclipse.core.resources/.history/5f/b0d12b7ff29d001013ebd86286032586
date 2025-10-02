@@ -1,0 +1,34 @@
+package POMTestCases;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class ScriptPOM extends POMTesting {
+
+	public void login() {
+		driver.get("https://sampleapp.tricentis.com/101/app.php");
+	}
+	
+	@FindBy (xpath="//input[@id='cylindercapacity']") WebElement CC;
+	@FindBy (xpath="//input[@id='engineperformance']") WebElement EP;
+	@FindBy  (xpath="//button[@id='nextenterinsurantdata']") WebElement NID;
+	public void vehicleData(String c,String e) {
+	CC.sendKeys(c);
+	EP.sendKeys(e);
+	NID.click();
+	}
+	
+	@FindBy (xpath="//input[@id='firstname']") WebElement FN;
+	@FindBy (xpath="//input[@id='lastname']") WebElement LN;
+	@FindBy (xpath="//label[input[@id='gendermale']]/span") WebElement G;
+	public void insurantData(String fname,String lname,String gender) {
+		FN.sendKeys(fname,lname,gender);
+		}
+	
+	@FindBy (xpath="//select[@id='insurancesum']") WebElement IS;
+	@FindBy (xpath="//select[@id='damageinsurance']") WebElement DI;
+	public void productData() {
+		IS.isEnabled();
+	}
+}

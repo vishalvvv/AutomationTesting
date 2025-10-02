@@ -1,0 +1,231 @@
+package RunningKosmikHMS;
+
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+
+public class Scripting extends ReusedMethods {
+  @Test
+  public void login() {
+	  
+	  driver.get(obj.getProperty("URL"));
+	  driver.findElement(By.xpath("//input[@type='text']")).sendKeys(obj.getProperty("UN"));
+	  driver.findElement(By.xpath("//input[@name='password']")).sendKeys(obj.getProperty("PWD"));
+	  driver.findElement(By.xpath("//input[@type='submit']")).click();
+	  
+	  }
+  
+  public void onepatient() throws InterruptedException, AWTException {
+	 
+	
+	  t(1);
+	   xp("XREG").click();
+	  
+		  
+		  xp("XFIRSTNAME").sendKeys("john");
+		  xp("XMIDDLENAME").sendKeys("anthony");
+		  xp("XLASTNAME").sendKeys("cena");
+		  xp("XAGE").sendKeys("48");
+		  xp("XMOTHERNAME").sendKeys("elizabeth hastwood");
+		  xp("XIDPROOF").sendKeys("47jyrf8g");
+		  xp("XADDRESS").sendKeys("hyderabad");
+		  xp("XMOBILENUMBER").sendKeys("47677550");
+		  xp("XADDRESS1").sendKeys("kphb roadno1");
+		  xp("XADDRESS2").sendKeys("kukatpally");
+		  xp("XZIP").sendKeys("500072");
+		  xp("XEMAIL").sendKeys("john123@wwe.com");
+		  
+		 WebElement patientdropdown =xp("XPATIENT");
+			   Select patientselect = new Select(patientdropdown);
+			   List<WebElement> patientoptions = patientselect.getOptions();
+			   Actions patientactions = new Actions(driver);
+			   for(int i=0;i<patientoptions.size();i++) {
+				  patientactions.moveToElement(patientdropdown).perform();
+				  patientselect.selectByIndex(i);
+			   }
+			   
+			   WebElement relationdropdown = xp("XRELATION");
+			   Select relationselect = new Select(relationdropdown);
+			   List<WebElement> relationoptions = relationselect.getOptions();
+			   Actions relationactions = new Actions(driver);
+			   for(int i=0;i<relationoptions.size();i++) {
+				 relationactions.moveToElement(relationdropdown).perform();
+				 relationselect.selectByIndex(i);
+			   }
+			   
+			   WebElement titledropdown = xp("XTITLE");
+			   Select titleselect = new Select(titledropdown);
+			   List<WebElement> titleoptions = titleselect.getOptions();
+			   Actions titleactions = new Actions(driver);
+			   for(int i=0;i<titleoptions.size();i++) {
+					 titleactions.moveToElement(titledropdown).perform();
+					 titleselect.selectByIndex(i);
+				   }
+			   
+			   WebElement identitydropdown = xp("XIDENTITY");
+			   Select identityselect = new Select(identitydropdown);
+			   List<WebElement> identityoptions = identityselect.getOptions();
+			   Actions indentityactions = new Actions(driver);
+			   for(int i=0;i<identityoptions.size();i++) {
+					 indentityactions.moveToElement(identitydropdown).perform();
+					identityselect.selectByIndex(i);
+				   }
+			   
+			   WebElement nationalitydropdown = xp("XNATIONALITY");
+			   Select nationalityselect  = new Select(nationalitydropdown);
+			   List<WebElement> nationalityoptions = nationalityselect.getOptions();
+			   Actions nationalityactions = new Actions(driver);
+			   for(int i=0;i<nationalityoptions.size();i++) {
+				   nationalityactions.moveToElement(nationalitydropdown).perform();
+				   nationalityselect.selectByIndex(i);
+			   }
+			   
+			   WebElement vipdropdown = xp("XVIP");
+			   Select vipselect  = new Select(vipdropdown);
+			   List<WebElement> vipoptions = vipselect.getOptions();
+			   Actions vipactions = new Actions(driver);
+			   for(int i=0;i<vipoptions.size();i++) {
+				   vipactions.moveToElement(vipdropdown).perform();
+				   vipselect.selectByIndex(i);
+			   }
+			   
+			   WebElement educationdropdown = xp("XEDUCATION");
+			   Select educationselect  = new Select(educationdropdown);
+			   List<WebElement> educationoptions = educationselect.getOptions();
+			   Actions educationactions = new Actions(driver);
+			   for(int i=0;i<educationoptions.size();i++) {
+				   vipactions.moveToElement(educationdropdown).perform();
+				   educationselect.selectByIndex(i);
+			   }
+			   
+			   WebElement occupationdropdown = xp("XOCCUPATION");
+			   Select occupationselect  = new Select(occupationdropdown);
+			   List<WebElement> occupationoptions = occupationselect.getOptions();
+			   Actions occupationactions = new Actions(driver);
+			   for(int i=0;i<occupationoptions.size();i++) {
+				   occupationactions.moveToElement(occupationdropdown).perform();
+				   occupationselect.selectByIndex(i);
+			   }
+			   
+			   WebElement bloodgroupdropdown = xp("XBLOODGROUP");
+			   Select bloodgroupselect  = new Select(bloodgroupdropdown);
+			   List<WebElement> bloodgroupoptions = bloodgroupselect.getOptions();
+			   Actions bloodgroupactions = new Actions(driver);
+			   for(int i=0;i<bloodgroupoptions.size();i++) {
+				   bloodgroupactions.moveToElement(bloodgroupdropdown).perform();
+				   bloodgroupselect.selectByIndex(i);
+			   }
+			   
+			   WebElement citizenshipdropdown = xp("XCITIZENSHIP");
+			   Select citizenshipselect  = new Select(citizenshipdropdown);
+			   List<WebElement> citizenshipoptions = citizenshipselect.getOptions();
+			   Actions citizenshipactions = new Actions(driver);
+			   for(int i=0;i<citizenshipoptions.size();i++) {
+				  citizenshipactions.moveToElement(citizenshipdropdown).perform();
+				   citizenshipselect.selectByIndex(i);
+			   }
+			   
+			   WebElement seniorcitizendropdown = xp("XSENIORCITIZENPROOF");
+			   Select seniorcitizenselect  = new Select(seniorcitizendropdown);
+			   List<WebElement> seniorcitizenoptions = seniorcitizenselect.getOptions();
+			   Actions seniorcitizenactions = new Actions(driver);
+			   for(int i=0;i<seniorcitizenoptions.size();i++) {
+				  seniorcitizenactions.moveToElement(seniorcitizendropdown).perform();
+				   seniorcitizenselect.selectByIndex(i);
+			   }
+			   
+			   WebElement genderdropdown = xp("XGENDER");
+			   Select genderselect  = new Select(genderdropdown);
+			   List<WebElement> genderoptions = genderselect.getOptions();
+			   Actions genderactions = new Actions(driver);
+			   for(int i=0;i<genderoptions.size();i++) {
+				  genderactions.moveToElement(genderdropdown).perform();
+				   genderselect.selectByIndex(i);
+			   }
+			   
+			   WebElement maritalstatusdropdown = xp("XMARITALSTATUS");
+			   Select maritalstatusselect  = new Select(maritalstatusdropdown);
+			   List<WebElement> maritalstatusoptions = maritalstatusselect.getOptions();
+			   Actions maritalstatusactions = new Actions(driver);
+			   for(int i=0;i<maritalstatusoptions.size();i++) {
+				  maritalstatusactions.moveToElement(maritalstatusdropdown).perform();
+				   maritalstatusselect.selectByIndex(i);
+			   }
+			   
+			   WebElement religiondropdown = xp("XRELIGION");
+			   Select religionselect  = new Select(religiondropdown);
+			   List<WebElement> religionoptions = religionselect.getOptions();
+			   Actions religionactions = new Actions(driver);
+			   for(int i=0;i<religionoptions.size();i++) {
+				  religionactions.moveToElement(religiondropdown).perform();
+				   religionselect.selectByIndex(1);
+			   }
+			   
+			   WebElement primarylanguagedropdown = xp("XPRIMARYLANGUAGE");
+			   Select primarylanguageselect  = new Select(primarylanguagedropdown);
+			   List<WebElement> primarylanguageoptions = primarylanguageselect.getOptions();
+			   Actions primarylanguageactions = new Actions(driver);
+			   for(int i=0;i<primarylanguageoptions.size();i++) {
+				  primarylanguageactions.moveToElement(primarylanguagedropdown).perform();
+				   primarylanguageselect.selectByIndex(1);
+			   }
+			   
+			   WebElement countrydropdown = xp("XCOUNTRY");
+			   Select countryselect  = new Select(countrydropdown);
+			   List<WebElement> countryoptions = countryselect.getOptions();
+			   Actions countryactions = new Actions(driver);
+			   for(int i=0;i<countryoptions.size();i++) {
+				  countryactions.moveToElement(countrydropdown).perform();
+				   countryselect.selectByIndex(1);
+			   }
+			   
+			
+			WebElement dobicon = xp("XDOB");
+			dobicon.click();
+		dobicon.sendKeys("12-08-2025");
+		
+			
+         
+        
+			   
+			   Actions image = new Actions(driver);
+			   image.moveToElement(xp("XIMAGE")).click().perform();
+			   StringSelection S = new StringSelection("C:\\Users\\Vishal\\Downloads\\Testing Tools\\Manual Testing\\Agile.jpg");
+			   Toolkit.getDefaultToolkit().getSystemClipboard().setContents(S, null);
+			   
+			   Robot R = new Robot();
+			   t(1);
+			   R.keyPress(KeyEvent.VK_CONTROL);
+			   R.keyPress(KeyEvent.VK_V);
+			   R.keyRelease(KeyEvent.VK_CONTROL);
+			   R.keyRelease(KeyEvent.VK_V);
+			   R.keyPress(KeyEvent.VK_ENTER);
+			   R.keyRelease(KeyEvent.VK_ENTER);
+			   
+			   t(3);
+			     
+		  xp("XSAVE").click();
+		  
+		 // xp("XCLEAR").click();
+		  
+  }
+
+public void logout() throws InterruptedException {
+	t(15);
+	xp("XLOGOUT").click();
+	
+}
+  
+  
+  
+}

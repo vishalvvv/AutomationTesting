@@ -1,0 +1,45 @@
+io.cucumber.junit.UndefinedStepException: The step 'application URL' and 7 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("application URL")
+public void application_url() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("check the title of the home page")
+public void check_the_title_of_the_home_page() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("Title checks enter Username")
+public void title_checks_enter_username() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Enter Password")
+public void enter_password() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("hit login button")
+public void hit_login_button() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("mouseover in PIM")
+public void mouseover_in_pim() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("click on Add Employee")
+public void click_on_add_employee() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("move to the frame in add employee page")
+public void move_to_the_frame_in_add_employee_page() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+

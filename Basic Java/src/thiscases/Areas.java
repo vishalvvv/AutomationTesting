@@ -1,0 +1,36 @@
+package thiscases;
+
+public class Areas {
+	
+	void data() {
+		System.out.println("-----------calculating different areas---------");
+	}
+	boolean u = true;
+	
+	Areas(){
+		this(17);
+		this.data();
+		System.out.println("Hai Iam Default Constructor");
+		System.out.println("The value of U is" + this.u);
+	}
+
+	public static void main(String[] args) {
+		
+                   new Areas();
+	}
+		Areas(int a){
+			this(4,19);
+			System.out.println("The Area of Square is : " +(a*a));
+		}
+
+		Areas(int x,int y){
+			this(34,-19,17);
+			System.out.println("The Area of Rectangle is : " +(x*y));
+		}
+		
+		Areas(int k,int m,int n){
+			System.out.println("The sum of K,M,N is" + (k+m+n));
+		}
+	
+
+}

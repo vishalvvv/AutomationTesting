@@ -1,0 +1,9 @@
+Feature:Checking price quote
+Scenario: verifying the above price
+Given User gives application URL
+Then check whether user logged into home page
+Then check whether user logged into vehicle insurant page
+Then  check whether user logged into product data page
+And check whether price is correct
+Then click on next button
+

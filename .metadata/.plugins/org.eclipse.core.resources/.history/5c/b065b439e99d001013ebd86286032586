@@ -1,0 +1,17 @@
+package POMTestCases;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class ScriptPOM extends POMTesting {
+
+	public void login() {
+		driver.get("https://sampleapp.tricentis.com/101/app.php");
+	}
+	
+	@FindBy (xpath="//input[@id='cylindercapacity']") WebElement CC;
+	public void vehicleData() {
+	CC.sendKeys("100");
+	}
+}

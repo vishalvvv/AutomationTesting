@@ -1,0 +1,82 @@
+URL  = https://www.kosmiktechnologies.com/seleniumLiveProject/kosmik-hms/index.php?msg=Successfully%20Logged%20out
+UN = kosmik
+PWD = kosmik
+
+XUN = //input[@type='text']
+XPWD = //input[@name='password']
+XSUB = //input[@type='submit']
+XREG= //a[text()='Registration']
+XSAVE = //input[@type='submit']
+XCLEAR=//input[@value='Clear']
+XLOGOUT=//a[@href='logout.php']
+
+
+
+ XPATIENT =//select[@name='PATIENT_CAT']
+ XRELATION=//select[@name='RELATION']
+ XTITLE=//select[@name='TITLE']
+ XIDENTITY=//select[@name='PAT_IDENTITY']
+ XNATIONALITY=//select[@name='NATIONALITY']
+ XVIP=//select[@name='IS_MLC']
+ XEDUCATION=//select[@name='EDUCATION']
+ XOCCUPATION=//select[@name='OCCUPATION']
+ XBLOODGROUP=//select[@name='BLOOD_GRP_CODE']
+ XCITIZENSHIP=//select[@name='CITIZENSHIP']
+ XSENIORCITIZENPROOF=//select[@name='SC_PROOF']
+ XGENDER=//select[@name='SEX']
+ XMARITALSTATUS=//select[@name='MTRL_STATUS']
+ XRELIGION=//select[@name='RELIGION']
+ XPRIMARYLANGUAGE=//select[@name='PLANGUAGE']
+ XCOUNTRY=//select[@name='COUNTRY_CODE']
+ 
+ 
+ XDOB=//input[@name='DOB']
+ 
+ 
+ XIMAGE=//input[@name='image']
+ 
+ XPATIENTUPDATE=//select[@name='RG_PAT_CATG']
+ XTITLEUPDATE=//select[@name='TITLE']
+ XGENDERUPDATE=//select[@name='SEX']
+ XRELIGIONUPDATE=//select[@name='RELIGION']
+ XPRIMARYLANGUAGEUPDATE=//select[@name='PLANGUAGE']
+ XCOUNTRYUPDATE=//select[@name='COUNTRY_CODE']
+ XRELATIONUPDATE=//select[@name='RELATION']
+ XPATIENTIDENTIFIERUPDATE=//select[@name='PAT_IDENTITY']
+ XNATIONALITYUPDATE = //select[@name='NATIONALITY']
+ XVIPUPDATE=//select[@name='IS_MLC']
+ XEDUCATIONUPDATE=//select[@name='EDUCATION']
+ XOCCUPATIONUPDATE=//select[@name='OCCUPATION']
+ XMARITIALSTATUSUPDATE=//select[@name='MTRL_STATUS']
+ XBLOODGROUPUPDATE=//select[@name='BLOOD_GRP_CODE']
+ XCITIZENSHIPUPDATE=//select[@name="CITIZENSHIP"]
+ XSENIORCITIZENPROOFUPDATE=//select[@name='SC_PROOF']
+ 
+ 
+ 
+ 
+ XFIRSTNAME=//input[@name='PNT_NAME']
+ XMIDDLENAME=//input[@name='MIDDLE_NAME']
+ XLASTNAME=//input[@name='LAST_NAME']
+ XAGE=//input[@name='AGE']
+ XMOTHERNAME=//input[@name='MOTHER_NAME']
+ XIDPROOF=//input[@name='PAT_IDENTITY_PROOF']
+ XADDRESS=//input[@name='ADDRESS1']
+ XMOBILENUMBER=//input[@name='MOBILE_NO']
+ XADDRESS1=//input[@name="ADDRESS1"]
+XADDRESS2=//input[@name='ADDRESS2']
+XZIP=//input[@name='ZIP']
+XEMAIL=//input[@name='EMAIL_ID']
+
+ XSEARCHREGISTRATION=//a[@href='search_registraion.php']
+ 
+         
+ XCANCEL =//a[text()='Cancel']
+ 
+ 
+ 
+ 
+ XEDIT=//a[contains(@href, 'perminent_registraion_update.php?rg_seq_id') and text()='Edit']
+ XUPDATE=//input[@value='Update']
+       
+          

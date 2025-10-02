@@ -1,0 +1,7 @@
+Feature: Adding insurant data
+Scenario:Validating insurant information
+Given User gives application URL
+Then check whether user logged into home page
+Then check whether user logged into vehicle insurant page
+And  Enter details of user
+Then Click on next button

@@ -1,0 +1,19 @@
+package RunningVehicleInsurance;
+
+import org.testng.annotations.Test;
+
+import BasePack.BaseClass;
+
+public class ExecuteTestCases extends BaseClass {
+	
+ @Test
+ public void testcases() {
+	 Scripting S = new Scripting();
+	 S.login();
+	 S.vehicleData();
+	 S.insurantData();
+	 S.productData();
+	 S.selectPriceOption();
+ }
+	 
+}

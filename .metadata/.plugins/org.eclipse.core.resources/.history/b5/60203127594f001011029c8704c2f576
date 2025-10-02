@@ -1,0 +1,14 @@
+package DataTypes;
+
+public class FloatClass1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		// float p = 1.4; // error Type mismatch: cannot convert from double to float
+		
+		float p = 1.4f;
+		System.out.println(p);
+	}
+
+}

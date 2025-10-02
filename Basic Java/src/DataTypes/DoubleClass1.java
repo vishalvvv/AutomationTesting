@@ -1,0 +1,25 @@
+package DataTypes;
+
+public class DoubleClass1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		double a = 150.3;
+		System.out.println(a);
+		
+	//	double x  = 6783456215; // error The literal 6783456215 of type int is out of range 
+		double x  = 6783456215L;
+		System.out.println(x);
+		
+		double k = 6783456215f;
+		System.out.println(k);
+		
+		double l = 6783456215.;
+		System.out.println(l);
+		
+		double s = 6783456215D;
+		System.out.println(s);
+	}
+
+}

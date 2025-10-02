@@ -1,0 +1,29 @@
+package miyapur;
+
+public class HEC2ndYear {
+	
+void raghu() {
+	byte age = 20;
+	short height = 175;
+	int rollnumber = 12345;
+	long distancefromhousetocollege = 23445955L;
+	
+	System.out.println("hi all iam raghu method");
+}
+
+void  praveen() {
+	byte age = 22;
+	short height = 180;
+	int rollnumber = 84534;
+	long ageindays= 34455555L;
+	System.out.println("hello all im praveen method");
+}
+
+public static void main(String[] args) {
+	System.out.println("im in main method");
+	HEC2ndYear hec = new HEC2ndYear();
+	hec.raghu();
+	HEC2ndYear he = new HEC2ndYear();
+	he.praveen();
+}
+}

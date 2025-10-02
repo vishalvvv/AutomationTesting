@@ -1,0 +1,16 @@
+package POMTestCases;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import BasePack.BaseClass;
+
+public class POMTesting extends BaseClass{
+  @Test
+  public void Testing() {
+	 ScriptPOM S = PageFactory.initElements(driver, ScriptPOM.class);
+	 S.login("selenium","selenium");
+  }
+  }
+

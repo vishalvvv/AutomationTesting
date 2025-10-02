@@ -1,0 +1,81 @@
+package RunSteps;
+
+import java.time.Duration;
+import java.util.List;
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+
+public class Runstepbystep {
+	
+	public static WebDriver driver;
+	
+	
+	@Given("User gives application URL")
+	public void applicationurl() {
+		 System.setProperty("webdriver.edge.driver", "C:\\Users\\Vishal\\Automation Testing\\VehicleInsuranceProject\\MyBro\\msedgedriver.exe");
+		 driver = new EdgeDriver();
+		 driver.manage().window().maximize();
+		 driver.get("https://sampleapp.tricentis.com/101/app.php");
+		 
+	}
+	@Then("check whether user logged into home page")
+	public void checkwhetheruserloggedintohomepage() {
+		System.out.println("The Home page title is: " +driver.getTitle());
+	    
+	}
+	@Then("Enter vehicle details")
+	public void entervehicledetails() {
+		 WebElement make =driver.findElement(By.xpath("//select[@id='make']"));
+			List<WebElement> companies = driver.findElements(By.tagName("option"));
+			Select s = new Select(make);
+			s.selectByVisibleText("Audi");
+			WebElement model = driver.findElement(By.xpath("//select[@id='model']"));
+			Select sallmodels = new Select(model);
+			   sallmodels.selectByVisibleText("Moped");
+		   driver.findElement(By.xpath("//input[@id='cylindercapacity']")).sendKeys("100");
+			   driver.findElement(By.xpath("//input[@id='engineperformance']")).sendKeys("1200");
+			   driver.findElement(By.xpath("//input[@id='dateofmanufacture']")).sendKeys("01/01/2020");
+			   WebElement radio = driver.findElement(By.id("righthanddriveyes"));
+			   ((JavascriptExecutor) driver).executeScript("arguments[0].click();", radio);
+  WebElement noofseats= driver.findElement(By.xpath("//select[@id='numberofseats']"));
+				Select snoofseats = new Select(noofseats);
+				snoofseats.selectByIndex(7);
+				WebElement motorcycle = driver.findElement(By.xpath("//select[@id='numberofseats']"));
+			       Select smotorcycle = new Select(motorcycle);
+			       smotorcycle.selectByValue("2");
+			 WebElement fuels = driver.findElement(By.xpath("//select[@id='fuel']"));
+			 Select sfuels = new Select(fuels);
+			     sfuels.selectByVisibleText("Petrol");
+				 driver.findElement(By.xpath("//input[@id='payload']")).sendKeys("500");
+				driver.findElement(By.xpath("//input[@id='totalweight']")).sendKeys("1000");
+			 	driver.findElement(By.xpath("//input[@id='listprice']")).sendKeys("50000");
+			 	driver.findElement(By.xpath("//input[@id='licenseplatenumber']")).sendKeys("AB123CD");
+			 	driver.findElement(By.xpath("//input[@id='annualmileage']")).sendKeys("10000");
+			 //	driver.findElement(By.xpath(obj.getProperty("XNEXTINSURANTDATA"))).click();
+	//		 	WebElement idclick = new WebDriverWait(driver, Duration.ofSeconds(10))
+		//	 	        .until(ExpectedConditions.elementToBeClickable(By.xpath(obj.getProperty("XNEXTINSURANTDATA"))));
+       //  	idclick.click();
+			 	
+	    
+	}
+	@Then("Click on next button")
+	public void clickonnextbutton() {
+		WebElement idclick = new WebDriverWait(driver, Duration.ofSeconds(10))
+					 	        .until(ExpectedConditions.elementToBeClickable((By.xpath("//button[@id='nextenterinsurantdata']"))));
+		idclick.click();
+	}
+
+
+
+}

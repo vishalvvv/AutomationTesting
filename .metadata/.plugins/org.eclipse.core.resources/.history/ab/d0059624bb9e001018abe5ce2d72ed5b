@@ -1,0 +1,78 @@
+package ProductDataRunSteps;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+
+public class Runstepbystep {
+
+	public static WebDriver driver;
+	@Given("User gives application URL")
+	public void user_gives_application_url() {
+		System.setProperty("webdriver.edge.driver", "C:\\Users\\Vishal\\Automation Testing\\VehicleInsuranceProject\\MyBro\\msedgedriver.exe");
+		 driver = new EdgeDriver();
+		 driver.manage().window().maximize();
+		 driver.get("https://sampleapp.tricentis.com/101/app.php");
+	   
+	}
+	@Then("check whether user logged into home page")
+	public void checkwhetheruserloggedintohomepage() {
+		System.out.println("The Home page title is: " +driver.getTitle());
+	}
+	@Then("check whether user logged into vehicle insurant page")
+	public void checkwhetheruserloggedintovehicleinsurantpage() {
+		WebElement idclick = new WebDriverWait(driver, Duration.ofSeconds(10))
+	 	        .until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='nextenterinsurantdata']")));
+    	idclick.click();
+    	
+    	System.out.println("The insurant page title is: " +driver.getTitle());
+	}
+	@Then("check whether user logged into product data page")
+	public void checkwhetheruserloggedintoproductdatapage() {
+		 driver.findElement(By.xpath("//button[@id='nextenterproductdata']")).click();
+			System.out.println("The insurant page title is: " +driver.getTitle());
+		 
+	}
+	@Then("Enter details of the product")
+	public void enterdetailsoftheproduct() {
+		 driver.findElement(By.xpath("//input[@id='startdate']")).sendKeys("11/06/2025");
+	       WebElement insurancesum = driver.findElement(By.xpath("//select[@id='insurancesum']"));
+				List<WebElement> insurances = driver.findElements(By.tagName("option"));
+				Select sallinsurances = new Select(insurancesum);
+				sallinsurances.selectByValue("3000000");
+				WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
+				WebElement meritrating = driver.findElement(By.xpath("//select[@id='meritrating']"));
+			     Select selects = new Select(meritrating);
+			     selects.selectByVisibleText("Bonus 3");	
+		  WebElement Damagesum = driver.findElement(By.xpath("//select[@id='damageinsurance']"));
+			List<WebElement> damage = driver.findElements(By.tagName("option"));
+				Select salldamage = new Select(Damagesum);
+				salldamage.selectByVisibleText("Full Coverage");
+			WebElement span = driver.findElement(By.xpath("//label[.//input[@id='EuroProtection']]//span"));
+				   JavascriptExecutor js = (JavascriptExecutor) driver;
+			   js.executeScript("arguments[0].click();", span);
+	     WebElement Courtesycars = driver.findElement(By.xpath("//select[@id='courtesycar']"));
+		  List<WebElement> courtesyoptions = driver.findElements(By.tagName("option"));
+		   Select sallcourtesyoptions = new Select(Courtesycars);
+			   sallcourtesyoptions.selectByVisibleText("Yes");
+	}
+	@Then("click on next button")
+	public void clickonnextbutton() {
+		WebElement nextprodclick = new WebDriverWait(driver, Duration.ofSeconds(10))
+			    .until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='nextselectpriceoption']")));
+			nextprodclick.click();
+
+	}
+
+}

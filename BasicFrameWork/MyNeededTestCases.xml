@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+<class name="FailedTestCasesPack.AnimalClass1">
+	
+	<methods>
+		<include name="ox"></include>
+		<include name="fx"></include>
+		<include name="hrs"></include>
+	</methods>
+	
+</class>
+      <class name="FailedTestCasesPack.AnimalClass2">
+		  <methods>
+		<include name="dnk"></include>
+		<include name="hn"></include>
+		<include name="mnk"></include>
+	</methods>
+	</class>  
+	
+     <class name="FailedTestCasesPack.AnimalClass3">
+		 <methods>
+		 <include name="cw"></include>
+		<include name="mse"></include>
+		<include name="bfl"></include>
+	</methods>
+		  
+		 </class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

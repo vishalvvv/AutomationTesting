@@ -1,0 +1,113 @@
+package RunningVehicleInsurance;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+
+public class Scripting  extends ReusedMethods{
+	
+	 @Test
+	  public void login() {
+		  driver.get(obj.getProperty("URL"));
+		
+	  }
+	 
+	 public void vehicleData() {
+		
+		 WebElement make =driver.findElement(By.xpath(obj.getProperty("XMAKE")));
+					List<WebElement> companies = driver.findElements(By.tagName("option"));
+					Select s = new Select(make);
+					s.selectByVisibleText("Audi");
+					WebElement model = driver.findElement(By.xpath(obj.getProperty("XMODEL")));
+					Select sallmodels = new Select(model);
+					   sallmodels.selectByVisibleText("Moped");
+					   driver.findElement(By.xpath(obj.getProperty("XCYLINDERCAPACITY"))).sendKeys("100");
+					   driver.findElement(By.xpath(obj.getProperty("XENGINEPERFORMANCE"))).sendKeys("1200");
+					   driver.findElement(By.xpath(obj.getProperty("XDATEOFMANUFACTURE"))).sendKeys("01/01/2020");
+					   WebElement radio = driver.findElement(By.id("righthanddriveyes"));
+					   ((JavascriptExecutor) driver).executeScript("arguments[0].click();", radio);
+            WebElement noofseats= driver.findElement(By.xpath(obj.getProperty("XNOOFSEATS")));
+						Select snoofseats = new Select(noofseats);
+						snoofseats.selectByIndex(7);
+						WebElement motorcycle = driver.findElement(By.xpath(obj.getProperty("XNOOFSEATSMOTORCYCLE")));
+					       Select smotorcycle = new Select(motorcycle);
+					       smotorcycle.selectByValue("2");
+						 WebElement fuels = driver.findElement(By.xpath(obj.getProperty("XFUEL")));
+						 Select sfuels = new Select(fuels);
+					     sfuels.selectByVisibleText("Petrol");
+						 driver.findElement(By.xpath(obj.getProperty("XPAYLOAD"))).sendKeys("500");
+						driver.findElement(By.xpath(obj.getProperty("XWEIGHT"))).sendKeys("1000");
+					 	driver.findElement(By.xpath(obj.getProperty("XLISTPRICE"))).sendKeys("50000");
+					 	driver.findElement(By.xpath(obj.getProperty("XLICENSEPLATENUMBER"))).sendKeys("AB123CD");
+					 	driver.findElement(By.xpath(obj.getProperty("XANNUALMILEAGE"))).sendKeys("10000");
+					 	driver.findElement(By.xpath(obj.getProperty("XNEXTINSURANTDATA"))).click();
+	 }
+	 
+	 public void insurantData() {
+		 driver.findElement(By.xpath(obj.getProperty("XFIRSTNAME"))).sendKeys("John");
+		 driver.findElement(By.xpath(obj.getProperty("XLASTNAME"))).sendKeys("Doe");
+			driver.findElement(By.xpath(obj.getProperty("XDATEOFBIRTH"))).sendKeys("01/01/1990");
+			driver.findElement(By.xpath(obj.getProperty("XGENDER"))).click();
+			driver.findElement(By.xpath(obj.getProperty("XADDRESS"))).sendKeys("KPHB");
+			WebElement countries = driver.findElement(By.xpath(obj.getProperty("XCOUNTRY")));
+			List<WebElement> allcountries = driver.findElements(By.tagName("option"));
+			Select sallcountries = new Select(countries);
+			sallcountries.selectByVisibleText("India");
+			driver.findElement(By.xpath(obj.getProperty("XZIPCODE"))).sendKeys("600001");
+			driver.findElement(By.xpath(obj.getProperty("XCITY"))).sendKeys("Chennai");
+           WebElement occupations = driver.findElement(By.xpath(obj.getProperty("XOCCUPATIONS")));
+			List<WebElement> alloccupations = driver.findElements(By.tagName("option"));
+			Select salloccupation = new Select(occupations);
+			salloccupation.selectByVisibleText("Employee");
+			 driver.findElement(By.xpath(obj.getProperty("XSPEEDING"))).click();
+			 driver.findElement(By.xpath(obj.getProperty("XENTERNEXTPRODUCTDATA"))).click();
+			}
+	 
+	 public void productData() {
+		 driver.findElement(By.xpath(obj.getProperty("XSTARTDATE"))).sendKeys("11/06/2025");
+       WebElement insurancesum = driver.findElement(By.xpath(obj.getProperty("XINSURANCESUM")));
+			List<WebElement> insurances = driver.findElements(By.tagName("option"));
+			Select sallinsurances = new Select(insurancesum);
+			sallinsurances.selectByValue("3000000");
+			WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement meritrating = driver.findElement(By.xpath(obj.getProperty("XMERITRATING")));
+		     Select selects = new Select(meritrating);
+		     selects.selectByVisibleText("Bonus 3");	
+		  WebElement Damagesum = driver.findElement(By.xpath(obj.getProperty("XDAMAGEINSURANCE")));
+			List<WebElement> damage = driver.findElements(By.tagName("option"));
+			Select salldamage = new Select(Damagesum);
+			salldamage.selectByVisibleText("Full Coverage");
+			WebElement span = driver.findElement(By.xpath(obj.getProperty("XEUROPROTECTION")));
+			   JavascriptExecutor js = (JavascriptExecutor) driver;
+			   js.executeScript("arguments[0].click();", span);
+     WebElement Courtesycars = driver.findElement(By.xpath(obj.getProperty("XCOURTESYCARS")));
+		   List<WebElement> courtesyoptions = driver.findElements(By.tagName("option"));
+		   Select sallcourtesyoptions = new Select(Courtesycars);
+		   sallcourtesyoptions.selectByVisibleText("Yes");
+		   driver.findElement(By.xpath(obj.getProperty("XNEXTPRODUCTBUTTON"))).click();
+		   }
+	 
+	 public void selectPriceOption() {
+		 driver.findElement(By.xpath(obj.getProperty("XGOLD"))).click();
+	//	 driver.findElement(By.xpath("//button[@id='nextsendquote']")).click();
+		 WebElement sendQuote = driver.findElement(By.id("nextsendquote"));
+		 JavascriptExecutor js = (JavascriptExecutor) driver;
+		 js.executeScript("arguments[0].click();", sendQuote);
+   }
+	 
+	 public void sendQuote() {
+		 driver.findElement(By.xpath(obj.getProperty("XEMAIL"))).sendKeys("john@example.com");
+		 driver.findElement(By.xpath(obj.getProperty("XPHONE"))).sendKeys("456824278");
+		 driver.findElement(By.xpath(obj.getProperty("XUSERNAME"))).sendKeys("johndoe");
+		 driver.findElement(By.xpath(obj.getProperty("XPASSWORD"))).sendKeys("Test@123");
+	 }
+
+}

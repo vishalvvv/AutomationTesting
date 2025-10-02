@@ -1,0 +1,36 @@
+package BasePack;
+
+
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+
+
+public class BaseClass {
+	
+public static WebDriver driver;
+public static Properties obj;
+
+
+ public void openingmybrowser() throws IOException {
+	 System.setProperty("webdriver.edge.driver", "C:\\Users\\Vishal\\Automation Testing\\VehicleInsuranceProject\\MyBro\\msedgedriver.exe");
+	 driver = new EdgeDriver();
+	 driver.manage().window().maximize();
+	 
+	 FileInputStream f = new FileInputStream("C:\\Users\\Vishal\\Automation Testing\\VehicleInsuranceProject\\src\\data\\java\\MyDataPack\\DataFile");
+	 
+	 obj = new Properties();
+	 obj.load(f);
+	 }
+
+  
+  
+  public void closemybrowser() {
+	  driver.quit();
+  }
+
+}
